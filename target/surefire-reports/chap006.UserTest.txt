@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: chap004.IntegerExamplesTest
+Test set: chap006.UserTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in chap004.IntegerExamplesTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in chap006.UserTest

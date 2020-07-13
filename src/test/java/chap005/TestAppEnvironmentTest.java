@@ -2,6 +2,9 @@ package chap005;
 
 import domainobject.TestAppEnv;
 import org.junit.jupiter.api.Test;
+
+import static domainobject.TestAppEnv.DOMAIN;
+import static domainobject.TestAppEnv.PORT;
 import static junit.framework.TestCase.assertEquals;
 
 public class TestAppEnvironmentTest {
@@ -13,8 +16,8 @@ public class TestAppEnvironmentTest {
 
     @Test
     public void canGetDomainAndPortStatically() {
-        assertEquals("Just the Domain", "192.123.0.3", TestAppEnv.DOMAIN);
-        assertEquals("Just the Port", "67", TestAppEnv.PORT);
+        assertEquals("Just the Domain", "192.123.0.3", DOMAIN);
+        assertEquals("Just the Port", "67", PORT);
     }
 
 }
