@@ -9,58 +9,84 @@ import java.util.Collection;
 import static junit.framework.TestCase.*;
 
 public class CreateAndManipulateACollectionOfUsersTest {
+    private Collection<User> arrayListOfUsers, arrayListOfUsers2;
+    private User user1, user2, user3, user4;
+
     @Test
-    public void canCreateAndManipulateACollectionOfUsers() {
-        // create empty collection of Users
-        Collection<User> arrayListOfUsers = new ArrayList<>();
+    public void canInitializeACollectionOfUsers() {
+        arrayListOfUsers = new ArrayList<>();
 
         assertEquals("arrayListOfUsers has a size of 0", 0, arrayListOfUsers.size());
         assertTrue(arrayListOfUsers.isEmpty());
+    }
 
-        // create 2 Users
-        User user1 = new User("testUsername1", "testPassword1");
-        User user2 = new User("testUsername2", "testPassword2");
+    @Test
+    public void canInitializeTwoUsers() {
+        user1 = new User("testUsername1", "testPassword1");
+        user2 = new User("testUsername2", "testPassword2");
         assertEquals("user1 is created with username 'testUsername1'", "testUsername1", user1.getUsername());
         assertEquals("user2 is created with username 'testUsername2'", "testUsername2", user2.getUsername());
+    }
 
-        // add those 2 users to the empty collection
+    @Test
+    public void canAddTwoUsers() {
+        arrayListOfUsers = new ArrayList<>();
+
+        user1 = new User("testUsername1", "testPassword1");
+        user2 = new User("testUsername2", "testPassword2");
+
         arrayListOfUsers.add(user1);
         arrayListOfUsers.add(user2);
 
-        assertEquals("arrayListOfUsers has a size o 2", 2, arrayListOfUsers.size());
+        assertEquals("arrayListOfUsers has a size of 2", 2, arrayListOfUsers.size());
         assertFalse("arrayListOfUsers2 is empty", arrayListOfUsers.isEmpty());
+    }
 
-        // create a second collection with two different users
-        Collection<User> arrayListOfUsers2 = new ArrayList<User>();
+    @Test
+    public void canInitializeAnotherCollectionOfUsers() {
+        arrayListOfUsers = new ArrayList<>();
+        arrayListOfUsers2 = new ArrayList<>();
 
         assertEquals("arrayListOfUsers2 has a size of 0", 0, arrayListOfUsers2.size());
         assertTrue("arrayListOfUsers2 is empty", arrayListOfUsers2.isEmpty());
 
-        User user3 = new User("testUsername3", "testPassword3");
-        User user4 = new User("testUsername4", "testPassword4");
+        user3 = new User("testUsername3", "testPassword3");
+        user4 = new User("testUsername4", "testPassword4");
 
         assertEquals("user3 is created with username 'testUsername3'", "testUsername3", user3.getUsername());
         assertEquals("user4 is created with username 'testUsername4'", "testUsername4", user4.getUsername());
 
         arrayListOfUsers2.add(user3);
         arrayListOfUsers2.add(user4);
+    }
 
-        // addAll the second collection to the first collection
+    @Test
+    public void canAddSecondCollectionToTheFirstOne() {
+        arrayListOfUsers = new ArrayList<>();
+        arrayListOfUsers2 = new ArrayList<>();
+
         arrayListOfUsers.addAll(arrayListOfUsers2);
 
         assertTrue("arrayListOfUsers contains all the elements from arrayListOfUsers2", arrayListOfUsers.containsAll(arrayListOfUsers2));
+    }
 
-        // removeAll the Users from the second collection
+    @Test
+    public void canRemoveAllUsersFromSecondCollection() {
+        arrayListOfUsers = new ArrayList<>();
+        arrayListOfUsers2 = new ArrayList<>();
+
         arrayListOfUsers2.removeAll(arrayListOfUsers2);
         assertEquals("arrayListOfUsers2 has a size of 0", 0, arrayListOfUsers2.size());
         assertTrue("arrayListOfUsers2 is empty", arrayListOfUsers2.isEmpty());
+    }
 
-        // clear the first collection
+    @Test
+    public void canClearTheFirstCollection() {
+        arrayListOfUsers = new ArrayList<>();
+
         arrayListOfUsers.clear();
         assertEquals("arrayListOfUsers has a size of 0", 0, arrayListOfUsers.size());
         assertTrue("arrayListOfUsers is empty", arrayListOfUsers.isEmpty());
     }
-
-
 
 }
