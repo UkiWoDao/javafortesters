@@ -14,7 +14,7 @@ public class CreateAndManipulateACollectionOfUsersTest {
     private User user1, user2, user3, user4;
 
     @Test
-    public void canVerifyCollectionOfUsersIsInitialized() {
+    public void canInitializeCollectionOfUsers() {
         assertEquals("arrayListOfUsers has a size of 0", 0, arrayListOfUsers.size());
         assertTrue(arrayListOfUsers.isEmpty());
     }
@@ -23,6 +23,7 @@ public class CreateAndManipulateACollectionOfUsersTest {
     public void canInitializeTwoUsers() {
         user1 = new User("testUsername1", "testPassword1");
         user2 = new User("testUsername2", "testPassword2");
+
         assertEquals("user1 is created with username 'testUsername1'", "testUsername1", user1.getUsername());
         assertEquals("user2 is created with username 'testUsername2'", "testUsername2", user2.getUsername());
     }
@@ -37,10 +38,13 @@ public class CreateAndManipulateACollectionOfUsersTest {
 
         assertEquals("arrayListOfUsers has a size of 2", 2, arrayListOfUsers.size());
         assertFalse("arrayListOfUsers2 is empty", arrayListOfUsers.isEmpty());
+
+        assertTrue("arrayListOfUsers contains 'user1'", arrayListOfUsers.contains(user1));
+        assertTrue("arrayListOfUsers contains 'user2'", arrayListOfUsers.contains(user2));
     }
 
     @Test
-    public void canVerifyAnotherCollectionOfUsersIsInitialized() {
+    public void canInitializeAnotherCollectionOfUsers() {
         assertEquals("arrayListOfUsers2 has a size of 0", 0, arrayListOfUsers2.size());
         assertTrue("arrayListOfUsers2 is empty", arrayListOfUsers2.isEmpty());
     }
@@ -61,6 +65,10 @@ public class CreateAndManipulateACollectionOfUsersTest {
 
         assertEquals("arrayListOfUsers2 has a size of 2", 2, arrayListOfUsers2.size());
         assertFalse("arrayListOfUsers2 is not empty", arrayListOfUsers2.isEmpty());
+
+        assertTrue("arrayListOfUsers2 contains 'user3'", arrayListOfUsers2.contains(user3));
+        assertTrue("arrayListOfUsers2 contains 'user4'", arrayListOfUsers2.contains(user4));
+
     }
 
     @Test
