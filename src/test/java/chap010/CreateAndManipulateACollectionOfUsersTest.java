@@ -1,5 +1,6 @@
 package chap010;
 
+import Exceptions.InvalidPasswordException;
 import domainentities.User;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,7 @@ public class CreateAndManipulateACollectionOfUsersTest {
     }
 
     @Test
-    public void canInitializeTwoUsers() {
+    public void canInitializeTwoUsers() throws InvalidPasswordException {
         user1 = new User("testUsername1", "testPassword1");
         user2 = new User("testUsername2", "testPassword2");
 
@@ -29,7 +30,7 @@ public class CreateAndManipulateACollectionOfUsersTest {
     }
 
     @Test
-    public void canAddTwoUsersToFirstCollection() {
+    public void canAddTwoUsersToFirstCollection() throws InvalidPasswordException {
         user1 = new User("testUsername1", "testPassword1");
         user2 = new User("testUsername2", "testPassword2");
 
@@ -50,7 +51,7 @@ public class CreateAndManipulateACollectionOfUsersTest {
     }
 
     @Test
-    public void canInitializeAnotherTwoUsers() {
+    public void canInitializeAnotherTwoUsers() throws InvalidPasswordException {
         user3 = new User("testUsername3", "testPassword3");
         user4 = new User("testUsername4", "testPassword4");
 

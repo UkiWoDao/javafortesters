@@ -1,5 +1,6 @@
 package chap009;
 
+import Exceptions.InvalidPasswordException;
 import domainentities.User;
 import org.junit.jupiter.api.Test;
 import static junit.framework.TestCase.assertEquals;
@@ -8,7 +9,7 @@ import java.lang.reflect.Array;
 
 public class UserArrayTest {
     @Test
-    public void canCreateAnArrayOfUsers(){
+    public void canCreateAnArrayOfUsers() throws InvalidPasswordException {
         // initialize empty array of required size
         User[] arrayOfUsers = new User[100];
 

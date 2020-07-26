@@ -1,5 +1,6 @@
 package chap010;
 
+import Exceptions.InvalidPasswordException;
 import domainentities.User;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ public class CreateAndManipulateAMapOfUsersTest {
     }
 
     @Test
-    public void canInitializeTwoUsers() {
+    public void canInitializeTwoUsers() throws InvalidPasswordException {
         user1 = new User("testName1", "testPass1");
         user2 = new User("testName2", "testPass2");
 
@@ -28,7 +29,7 @@ public class CreateAndManipulateAMapOfUsersTest {
     }
 
     @Test
-    public void canAddOnlyOneUserWithTheSameKey() {
+    public void canAddOnlyOneUserWithTheSameKey() throws InvalidPasswordException {
         user1 = new User("testName1", "testPass1");
         user2 = new User("testName2", "testPass2");
 
@@ -38,6 +39,6 @@ public class CreateAndManipulateAMapOfUsersTest {
         assertFalse("Map of users contains user1", map.containsValue(user1));
         assertTrue("Map of users contains user2", map.containsValue(user2));
         assertEquals("map only has 1 user object", 1, map.size());
-        assertEquals("The object stored is 'user2'", user2, map.get("key1"));
+        assertEquals("The object stored is - user2", user2, map.get("key1"));
     }
 }
