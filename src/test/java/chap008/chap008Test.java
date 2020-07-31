@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import static chap008.SwitchShortCode.shortCodeSorting;
 import static junit.framework.TestCase.*;
-import chap008.SwitchShortCode;
 
 public class chap008Test {
     @Test

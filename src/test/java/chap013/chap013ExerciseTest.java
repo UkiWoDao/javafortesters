@@ -2,11 +2,8 @@ package chap013;
 
 import Exceptions.InvalidPasswordException;
 import domainentities.User;
-import org.junit.Rule;
 import org.junit.jupiter.api.Test;
-import org.junit.rules.ExpectedException;
 
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 

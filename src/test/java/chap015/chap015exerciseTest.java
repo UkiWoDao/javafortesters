@@ -1,27 +1,37 @@
 package chap015;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.List;
-
+import static chap015.FindAllOccurrences.findAllOccurrences;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class chap015exerciseTest {
+    public List<Integer> results;
+
     @Test
     public void findPositionOfAllOccurrencesInAString() {
-        List<Integer> results;
         results = findAllOccurrences("na vrh brda vrba mrda", "r");
 
-        // we know the char 'r' appears 4 times, so the list with all the occurrences will have the same size
         assertThat(results.size(), is(4));
+        assertThat(results.contains(4), is(true));
+        assertThat(results.contains(8), is(true));
+        assertThat(results.contains(13), is(true));
+        assertThat(results.contains(18), is(true));
+        assertThat(results.contains(5), is(false));
     }
 
-    private List<Integer> findAllOccurrences(String string, String substring) {
-        List<Integer> list = new ArrayList<Integer>() {
-            
-        }
+    @Test
+    public void checkReturnedListOfExampleStringWithFiveOccurrences() {
+        results = findAllOccurrences("oooooh", "o");
+
+        assertThat(results.size(), is(5));
     }
 
+    @Test
+    public void checkReturnedListOfExampleStringWithNoOccurrences() {
+        results = findAllOccurrences("lalalalala", "x");
+
+        assertThat(results.isEmpty(), is(true));
+    }
 }
