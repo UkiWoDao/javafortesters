@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: chap006.UserTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in chap006.UserTest
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.015 s <<< FAILURE! - in chap006.UserTest
+canConstructUserWithUsernameAndPassword  Time elapsed: 0.015 s  <<< ERROR!
+Exceptions.InvalidPasswordException: Password must be at least 6 characters of length
+	at chap006.UserTest.canConstructUserWithUsernameAndPassword(UserTest.java:19)
+

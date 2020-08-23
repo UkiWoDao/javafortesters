@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="chap006.UserTest" time="0.001" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="chap006.UserTest" time="0.015" tests="3" errors="1" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Users\Uros\AppData\Local\Programs\AdoptOpenJDK\bin"/>
-    <property name="sun.java.command" value="C:\Users\Uros\AppData\Local\Temp\surefire8102051926475657859\surefirebooter11491374800996121860.jar C:\Users\Uros\AppData\Local\Temp\surefire8102051926475657859 2020-07-12T22-08-39_098-jvmRun1 surefire14187728289752910174tmp surefire_0979170162903339051tmp"/>
+    <property name="sun.java.command" value="C:\Users\Uros\AppData\Local\Temp\surefire15660840248951971134\surefirebooter4067550936948434959.jar C:\Users\Uros\AppData\Local\Temp\surefire15660840248951971134 2020-07-31T23-49-36_197-jvmRun1 surefire13790373940565341949tmp surefire_05630591681267115055tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Uros\Documents\automation\javafortesters\target\test-classes;C:\Users\Uros\Documents\automation\javafortesters\target\classes;C:\Users\Uros\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\Uros\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Uros\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\Uros\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Uros\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\Uros\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\Uros\.m2\repository\org\junit\platform\junit-platform-runner\1.5.2\junit-platform-runner-1.5.2.jar;C:\Users\Uros\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Uros\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Uros\.m2\repository\org\junit\platform\junit-platform-launcher\1.5.2\junit-platform-launcher-1.5.2.jar;C:\Users\Uros\.m2\repository\org\junit\platform\junit-platform-suite-api\1.5.2\junit-platform-suite-api-1.5.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\Uros\AppData\Local\Temp\surefire8102051926475657859\surefirebooter11491374800996121860.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Uros\AppData\Local\Temp\surefire15660840248951971134\surefirebooter4067550936948434959.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.6+10"/>
@@ -60,7 +60,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="canConstructUserWithUsernameAndPassword" classname="chap006.UserTest" time="0"/>
+  <testcase name="canConstructUserWithUsernameAndPassword" classname="chap006.UserTest" time="0.015">
+    <error message="Password must be at least 6 characters of length" type="Exceptions.InvalidPasswordException">Exceptions.InvalidPasswordException: Password must be at least 6 characters of length
+	at chap006.UserTest.canConstructUserWithUsernameAndPassword(UserTest.java:19)
+</error>
+  </testcase>
   <testcase name="userHasDefaultUsernameAndPassword" classname="chap006.UserTest" time="0"/>
   <testcase name="canResetUserPassword" classname="chap006.UserTest" time="0"/>
 </testsuite>
