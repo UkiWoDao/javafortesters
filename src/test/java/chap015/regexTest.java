@@ -15,7 +15,6 @@ public class regexTest {
     @Test
     public void checkDigitsRequiredWithUpperCase() {
         User user = new User();
-
         Assertions.assertThrows(InvalidPasswordException.class, () -> {
             user.setPassword("InvalidPassword");
         });
@@ -34,7 +33,6 @@ public class regexTest {
     @Test
     public void checkBothDigitsAndUpperCaseRequired() throws InvalidPasswordException {
         User user = new User();
-
         user.setPassword("ValidPassword12");
         assertTrue(user.getPassword().equals("ValidPassword12"));
     }
